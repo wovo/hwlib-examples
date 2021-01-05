@@ -1,10 +1,10 @@
 #############################################################################
 # 
 # Makefile that
-#    - takes care of renumbering 
+#    - takes care of renumbering and codelite_workfile
 #    - defers other commands to the subdirectories
 #
-# (c) Wouter van Ooijen (www.voti.nl) 2019
+# (c) Wouter van Ooijen (www.voti.nl) 2019-2021
 #
 # Distributed under the Boost Software License, Version 1.0.
 # (See accompanying file LICENSE_1_0.txt or copy at 
@@ -13,18 +13,19 @@
 #############################################################################
 
 ifeq ($(OS),Windows_NT)
-   REMOVE := $(BMPTK)/tools/bmptk-rm 
    MAKE := bmptk-make
 else
-   REMOVE := rm -rf
    MAKE := make
 endif
 
-.PHONY: renumber clean build run error notab
+.PHONY: renumber clean build run error notab codelite_workspace
 
 renumber:
 	$(MAKE) -f makefile.link renumber
 
+codelite_workspace:
+	$(MAKE) -f makefile.link codelite_workspace
+   
 build:
 	$(MAKE) -f makefile.link build-subdirs
    

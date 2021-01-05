@@ -20,6 +20,7 @@ void test();
 
 int main(){
    test();
-   hwlib::cout << "Two sources test\n";   
+   // no support for UART yet
+   // hwlib::cout << "Two sources test\n";   
 }   
 

@@ -1,2 +1,2 @@
-bmptk-make -f Makefile.link codelite_workspace
+bmptk-make codelite_workspace
 pause

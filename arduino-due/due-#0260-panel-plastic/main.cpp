@@ -88,7 +88,7 @@ private:
    window & w;
    xy start;
    uint_fast8_t border;
-   color( c );
+   color c ;
    
    void write_implementation( xy pos, color col ) override {
       w.write( start + pos, col );

@@ -13,5 +13,5 @@
 #include "hwlib.hpp"
 
 void test(){
-   hwlib::cout << "Test function called\n";
+   //hwlib::cout << "Test function called\n";
 }
