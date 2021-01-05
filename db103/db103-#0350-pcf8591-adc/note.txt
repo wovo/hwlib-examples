@@ -1,0 +1,4 @@
+This gives an error on the linux arm compiler,
+the problem seems to be cout << unsigned int
+
+Maybe the result of an adc should be signed anyway...
