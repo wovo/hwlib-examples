@@ -3,7 +3,7 @@ the hwlib/bmptk development environment,
 grouped by target.
 
 The makefile in this direectory can 
-clean or build (all) the applications.
+clean or build (all) applications.
 
 The makefile.link is included by the makefiles in 
 the subdirectories; it includes hwlib/makefile.inc.

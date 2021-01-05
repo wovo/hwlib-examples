@@ -22,4 +22,4 @@ SEARCH  :=
 # set RELATIVE to the next higher directory 
 # and defer to the appropriate Makefile.* there
 RELATIVE := ..
-include $(RELATIVE)/Makefile.link
+include $(RELATIVE)/makefile.link
