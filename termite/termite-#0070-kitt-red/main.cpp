@@ -13,10 +13,13 @@
 #include "hwlib.hpp"
 
 int main( void ){
-   auto led_red   = hwlib::target::pin_out( hwlib::target::pins::led_red );
-   auto led_green = hwlib::target::pin_out( hwlib::target::pins::led_green );
-   auto led_blue  = hwlib::target::pin_out( hwlib::target::pins::led_blue );
-   auto port      = hwlib::port_out_from( led_red, led_green, led_blue );
+   auto r0    = hwlib::target::pin_out( hwlib::target::pins::b3 );
+   auto r1    = hwlib::target::pin_out( hwlib::target::pins::a15 );
+   auto r2    = hwlib::target::pin_out( hwlib::target::pins::a8 );
+   auto r3    = hwlib::target::pin_out( hwlib::target::pins::a2 );
+   auto r4    = hwlib::target::pin_out( hwlib::target::pins::a7 );
+   auto r5    = hwlib::target::pin_out( hwlib::target::pins::a1 );
+   auto port  = hwlib::port_out_from( r0, r1, r2, r3, r4, r5 );
    hwlib::kitt( port );
 }
 

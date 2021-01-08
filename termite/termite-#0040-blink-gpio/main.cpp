@@ -13,7 +13,7 @@
 #include "hwlib.hpp"
 
 int main( void ){
-   auto led = hwlib::target::pin_out( hwlib::target::pins::led_red );
+   auto led = hwlib::target::pin_out( hwlib::target::pins::b4 );
    hwlib::blink( led );
 }
 
