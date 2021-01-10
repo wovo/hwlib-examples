@@ -2,7 +2,7 @@ C++ example projects for
 the hwlib/bmptk development environment,
 grouped by target.
 
-The makefile in this direectory can 
+The makefile in this directory can 
 clean or build (all) applications.
 
 The makefile.link is included by the makefiles in 
