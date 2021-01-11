@@ -18,7 +18,7 @@ SERIAL_PORT       ?= COM4
 CONSOLE_BAUDRATE  ?= 2400
 
 ifneq ($(OS),Windows_NT)
-   SERIAL_PORTR ?= ttyUSB0
+   SERIAL_PORT ?= ttyUSB0
 endif
 
 # defer to the next-level makefile
