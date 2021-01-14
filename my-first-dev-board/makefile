@@ -20,12 +20,6 @@ endif
 
 .PHONY: renumber clean build run error notab codelite_workspace
 
-renumber:
-	$(MAKE) -f makefile.link renumber
-
-codelite_workspace:
-	$(MAKE) -f makefile.link codelite_workspace
-   
 build:
 	$(MAKE) -f makefile.link build-subdirs
    
@@ -34,6 +28,12 @@ clean:
    
 notab:
 	$(MAKE) -f makefile.link notab-subdirs
+   
+renumber:
+	$(MAKE) -f makefile.link renumber
+
+codelite_workspace:
+	$(MAKE) -f makefile.link codelite_workspace
    
  
 # user error handling   

@@ -7,6 +7,7 @@ __codelite.tags
 _cpp_flags
 _cc_flags
 _linker_flags
+_linker_libs
 refactoring.db
 ~$*.docx
 .project

@@ -51,8 +51,8 @@ int main( void ){
    hwlib::cout << "OLED timing demo - have patience!\n";
    
    // create the i2c-interfaced display
-   auto scl         = target::pin_oc( target::pins::scl );
-   auto sda         = target::pin_oc( target::pins::sda );
+   auto scl         = target::pin_oc( target::pins::scl1 );
+   auto sda         = target::pin_oc( target::pins::sda1 );
    auto i2c_bus     = hwlib::i2c_bus_bit_banged_scl_sda( scl,sda );
    auto display     = hwlib::glcd_oled( i2c_bus );   
    
