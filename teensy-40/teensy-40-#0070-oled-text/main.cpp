@@ -17,8 +17,8 @@ int main( void ){
        
    namespace target = hwlib::target;
    
-   auto scl           = hwlib::target::pin_oc{ hwlib::target::pins::d2 };
-   auto sda           = hwlib::target::pin_oc{ hwlib::target::pins::d3 };
+   auto scl           = hwlib::target::pin_oc{ hwlib::target::pins::d11 };
+   auto sda           = hwlib::target::pin_oc{ hwlib::target::pins::d14 };
    
    auto i2c_bus       = hwlib::i2c_bus_bit_banged_scl_sda( scl, sda );
    auto oled          = hwlib::glcd_oled( i2c_bus );  

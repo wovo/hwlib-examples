@@ -11,23 +11,18 @@
 // ==========================================================================
 
 #include "hwlib.hpp"
-
+//!NOTICE
+// CIN IS CURRENTLY NOT FUNCTIONAL AND YOU CANNOT READ IN CHARACTERS. MAYBE THIS WILL BE ADDED SOMETIME IN THE FUTURE
 int main( void ){
-   
    // wait for the terminal emulator to start up
    hwlib::wait_ms( 1'000 );   
-       
+
    for(;;){       
       hwlib::cout 
          << "Type a character : " << hwlib::flush;
          
       char c = hwlib::cin.getc();
-      
-      // hwlib::cout 
-      //    << "\n   "
-      //    << "'" << c << "' = 0x" 
-      //    << hwlib::hex << (int) c 
-      //    << "\n\n" << hwlib::flush;
+
       hwlib::cout << "\nrecieved: " << c << "\n";
    }         
 }

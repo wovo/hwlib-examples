@@ -34,7 +34,6 @@ clean:
    
 notab:
 	$(MAKE) -f makefile.link notab-subdirs
-   
  
 # user error handling   
 
