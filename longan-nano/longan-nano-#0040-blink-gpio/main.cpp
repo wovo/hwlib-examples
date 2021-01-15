@@ -20,6 +20,10 @@ int main ( void )
   
     GPIOC->CRH &= ~( 0xF << ( ( 13 - 8 ) * 4 ));
     GPIOC->CRH |= 0x03 << ( ( 13 - 8 ) * 4 );    
+    
+    auto led = hwlib::target::pin_out( 2, 13 );
+    //auto led = hwlib::target::pin_out( hwlib::target::pins::led );
+    // hwlib::blink( led );
 
     while(1)
     {
