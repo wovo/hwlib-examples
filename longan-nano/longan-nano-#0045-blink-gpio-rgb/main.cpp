@@ -13,23 +13,24 @@
 
 #include "hwlib.hpp"
 
+void flash( hwlib::pin_out & pin ){
+    pin.write( 0 );
+    for( volatile uint32_t i = 0; i < 350'000; i++ ){}
+    pin.write( 1 );
+    for( volatile uint32_t i = 0; i < 350'000; i++ ){}
+}
+
 int main( void ){
     
-   RCC->APB2ENR |= 1 << 4;
-  
-   GPIOC->CRH &= ~( 0xF << ( ( 13 - 8 ) * 4 ));
-   GPIOC->CRH |= 0x01 << ( ( 13 - 8 ) * 4 );
+   auto led_red = hwlib::target::pin_out( 2, 13 );
+   auto led_green = hwlib::target::pin_out( 0, 1 );
+   auto led_blue = hwlib::target::pin_out( 0, 2 );
    
    for(;;){
-      GPIOC->BSRR |= ( 0x01 << 13 );
-
-      // wait some time
-      for( volatile uint32_t i = 0; i < 150'000; i++ ){}
-	  
-      GPIOC->BSRR |= ( 0x01 << ( 13 + 16 ));
-	  
-      // wait some time
-      for( volatile uint32_t i = 0; i < 150'000; i++ ){}
-	  
+      flash( led_red );
+      flash( led_green );
+	  flash( led_blue );
+	  flash( led_blue );
    } 	  
 }
+

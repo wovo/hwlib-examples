@@ -10,26 +10,10 @@
 //
 // ==========================================================================
 
-
 #include "hwlib.hpp"
 
 int main( void ){
     
-   RCC->APB2ENR |= 1 << 4;
-  
-   GPIOC->CRH &= ~( 0xF << ( ( 13 - 8 ) * 4 ));
-   GPIOC->CRH |= 0x01 << ( ( 13 - 8 ) * 4 );
-   
-   for(;;){
-      GPIOC->BSRR |= ( 0x01 << 13 );
-
-      // wait some time
-      for( volatile uint32_t i = 0; i < 150'000; i++ ){}
-	  
-      GPIOC->BSRR |= ( 0x01 << ( 13 + 16 ));
-	  
-      // wait some time
-      for( volatile uint32_t i = 0; i < 150'000; i++ ){}
-	  
-   } 	  
+   auto led = hwlib::target::pin_out( 2, 13 );
+   hwlib::blink( led );
 }

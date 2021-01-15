@@ -15,21 +15,19 @@
 
 int main( void ){
     
-   RCC->APB2ENR |= 1 << 4;
-  
-   GPIOC->CRH &= ~( 0xF << ( ( 13 - 8 ) * 4 ));
-   GPIOC->CRH |= 0x01 << ( ( 13 - 8 ) * 4 );
+   auto led = hwlib::target::pin_out( 0, 2 );
    
    for(;;){
-      GPIOC->BSRR |= ( 0x01 << 13 );
+      led.write( 1 );
 
       // wait some time
       for( volatile uint32_t i = 0; i < 150'000; i++ ){}
 	  
-      GPIOC->BSRR |= ( 0x01 << ( 13 + 16 ));
+      led.write( 0 );
 	  
       // wait some time
       for( volatile uint32_t i = 0; i < 150'000; i++ ){}
 	  
    } 	  
 }
+
