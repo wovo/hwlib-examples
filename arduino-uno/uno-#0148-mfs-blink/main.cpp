@@ -4,6 +4,6 @@ int main( void ){
    
    auto shield = hwlib::multifunction_shield();
      
-   hwlib::kitt( shield.leds, 50 );
+   hwlib::blink( shield.led_1, 250 );
 
 }  
