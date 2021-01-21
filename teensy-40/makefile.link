@@ -15,7 +15,7 @@
 # common settings for Teensy 4.0 projects
 TARGET            ?= teensy_40
 SERIAL_PORT       ?= COM3
-CONSOLE_BAUDRATE  ?= 115200
+CONSOLE_BAUDRATE  ?= 38400
 
 # defer to the next-level makefile.link
 RELATIVE          ?= .
